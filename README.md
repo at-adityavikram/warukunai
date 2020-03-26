@@ -18,8 +18,8 @@ should print 00f
 
 while
 <br>
-o>o>f=
-should print oof
+0>0>f=
+should also print 00f
 
 <br>
 example 3
