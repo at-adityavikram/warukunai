@@ -60,5 +60,7 @@ example 4: looping
 !f[+^(.)]
 will print digits 1-f sequentially
 <br>
-___________________________
+___________________________<br><br>
+## limitations
+- as of now nesting of constructs is buggy
 v0.1
