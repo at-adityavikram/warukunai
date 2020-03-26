@@ -61,6 +61,7 @@ example 4: looping
 will print digits 1-f sequentially
 <br>
 ___________________________<br><br>
-## limitations
-- as of now nesting of constructs is buggy
+
+<h2>limitations</h2>
+- as of now nesting of constructs is buggy<br>
 v0.1
