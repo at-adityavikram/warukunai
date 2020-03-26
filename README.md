@@ -2,6 +2,30 @@
 a virtual-tape based esoteric 'programming language'<br>
 run this program directly in cmd.
 to get help, type help and press enter.
+## help
+<p>
+> move pointer right<br>
+< move pointer left<br>
+n set this cell to n (where n is any hex digit 0 to f)<br>
++ adds 1 to currrent cell (if current cell is f, + makes current cell 0)<br>
+- subtracts 1 from current cell (if current cell is 0, + makes current cell f)<br>
+r print raw bits<br>
+!_[_]_ if not condition (?0[>0=]>1= is equivalent to 'if current cell is not 0 then >0= else >1=)<br>
+?_[_]_ if condition (?0[>0=]>1= is equivalent to 'if current cell is 0 then >0= else >1=)<br>
+# randomly assign a value to this cell<br>
+(x) goto cell at location x (starts from 0, in hex. if '-' in front of x, then go back x positions. <br>
+    if '+' in front of x, go forward x positions. wraps around if reaches end or start.)<br>
+(~) goto last cell e.g. f(0)a>b>0(2)c(~)d= prints abcd<br>
+(.n) goto beginning *of code*<br>
+* reverse all cells<br>
+@ try to print output as string<br>
+i print output as integer<br>
+. swaps current cell with next cell (wraps around if current cell is last cell)<br>
+; resets tape to [0] and empties redundant program<br>
+= prints output in the [_..._] format<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;^<br>
+</p>
+
 ## examples
 <br>
 example 1 
