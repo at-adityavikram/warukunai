@@ -4,8 +4,8 @@ run this interpreter directly in cmd.
 
 ## main commands
 <p>
-> move pointer right
-< move pointer left
+> move pointer right. will add a cell with value '0x0' if at end.<br>
+< move pointer left<br>
 $0xn$ or $n$ sets current cell to '0xn' where n is a hex number of *any length*<br>
 $(0)$ copy the value of cell at position 0 and assign it to current cell.
 + adds 1 to currrent cell (if current cell is f, + makes current cell 0)<br>
