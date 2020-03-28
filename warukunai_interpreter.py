@@ -187,7 +187,7 @@ while True:
                     print("reset all")
                 prog_tape=""
     else:
-         elif prog_tape.split(" ")[0] == shcoms[1]:
+         if prog_tape.split(" ")[0] == shcoms[1]:
           cout=[]
           if len(prog_tape.split(" ")) != 1:
              for b in range(0,len(bits)):
@@ -198,4 +198,4 @@ while True:
              else:
                 print("not found")
             
-            i+=1
+         i+=1
