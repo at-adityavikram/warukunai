@@ -68,4 +68,6 @@ will have a much more *exotic* output
     - fixed the buggy tag nesting. now ? and ! constructs should nest just fine.<br>
     - fixed bug in variable assignment where multi digit hex were not assigned at all.<br>
     - fixed big in looping and code + tape navigation<br>
+    - fixed a downright terrible bug which caused any '=' to result in an infinite loop!
+    - fixed indentation errors
 <br><h2>v0.2</h2>
