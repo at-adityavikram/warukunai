@@ -1,6 +1,6 @@
 # warukunai
 a virtual-tape based esoteric 'programming language', in hex base.<br>
-run this program directly in cmd.
+run this interpreter directly in cmd.
 
 ## main commands
 <p>
@@ -63,6 +63,7 @@ will have a much more *exotic* output
 
 <h2>limitations</h2>
     - dont count them there are lots
+    - 'where' *might* not work due to a recent code port
 <h2>fixes</h2>
     - fixed the buggy tag nesting. now ? and ! constructs should nest just fine.
     - fixed bug in variable assignment where multi digit hex were not assigned at all.
