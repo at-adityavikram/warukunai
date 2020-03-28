@@ -62,10 +62,10 @@ while
 will have a much more *exotic* output
 
 <h2>limitations</h2>
-    - dont count them there are lots
+    - dont count them there are lots<br>
     - 'where' *might* not work due to a recent code port
 <h2>fixes</h2>
-    - fixed the buggy tag nesting. now ? and ! constructs should nest just fine.
-    - fixed bug in variable assignment where multi digit hex were not assigned at all.
-    - fixed big in looping and code + tape navigation
+    - fixed the buggy tag nesting. now ? and ! constructs should nest just fine.<br>
+    - fixed bug in variable assignment where multi digit hex were not assigned at all.<br>
+    - fixed big in looping and code + tape navigation<br>
 <br><h2>v0.2</h2>
