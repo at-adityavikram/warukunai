@@ -32,7 +32,7 @@ i print output as integer<br>
 example 1 - conditions
 <br>
 #?0x0[>$0x1$=]?0x1[>$0x0$=]$0x0$=
-if # gets value 1, will print 10 else if # gets value 0, will print 01
+if # gets value 1, will print ['0x1','0x0'] else if # gets value 0x0, will print 01 ['0x0','0x1']
 else prints 0
 
 <br>
@@ -63,4 +63,8 @@ will have a much more *exotic* output
 
 <h2>limitations</h2>
     - dont count them there are lots
-v0.2
+<h2>fixes</h2>
+    - fixed the buggy tag nesting. now ? and ! constructs should nest just fine.
+    - fixed bug in variable assignment where multi digit hex were not assigned at all.
+    - fixed big in looping and code + tape navigation
+<br><h2>v0.2</h2>
