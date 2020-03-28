@@ -1,67 +1,66 @@
 # warukunai
 a virtual-tape based esoteric 'programming language'<br>
 run this program directly in cmd.
-to get help, type help and press enter.
+
 ## main commands
 <p>
-> move pointer right<br>
-< move pointer left<br>
-n set this cell to n (where n is any hex digit 0 to f)<br>
+> move pointer right
+< move pointer left
+$0xn$ or $n$ sets current cell to '0xn' where n is a hex number of *any length*<br>
 + adds 1 to currrent cell (if current cell is f, + makes current cell 0)<br>
 - subtracts 1 from current cell (if current cell is 0, + makes current cell f)<br>
 r print raw bits<br>
-!_[_]_ if not condition (?0[>0=]>1= is equivalent to 'if current cell is not 0 then >0= else >1=)<br>
-?_[_]_ if condition (?0[>0=]>1= is equivalent to 'if current cell is 0 then >0= else >1=)<br>
+!_[_]_ if not condition (!0x0[>$0x0$=]>0x$1$= is equivalent to 'if current cell is not 0x0 then >$0x0$= else >$0x1$=)<br>
+?_[_]_ if condition (?0x0[>$0x0$=]>$0x1$= is equivalent to 'if current cell is 0x0 then >$0x0$= else >$0x1$=)<br>
 # randomly assign a value to this cell<br>
 (x) goto cell at location x (starts from 0, in hex. if '-' in front of x, then go back x positions. <br>
-    if '+' in front of x, go forward x positions. wraps around if reaches end or start.)<br>
-(~) goto last cell e.g. f(0)a>b>0(2)c(~)d= prints abcd<br>
-(.n) goto beginning *of code*<br>
-* reverse all cells<br>
+if '+' in front of x, go forward x positions. wraps around if reaches end or start.)<br>
+(~) goto last cell<br>
+{.} goto beginning *of code*<br>
+{~} goto end of code (basically break)<br>
+{n} goto position n in code<br>
+* reverse all cells behind pointer (including current cell)<br>
 @ try to print output as string<br>
 i print output as integer<br>
-. swaps current cell with next cell (wraps around if current cell is last cell)<br>
-; resets tape to [0] and empties redundant program<br>
-= prints output in the [_..._] format<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;^<br>
+; reset<br>
+= prints output in the [_.,.,.,._] format<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
 </p>
 
 ## examples
 <br>
-example 1 
+example 1 - conditions
 <br>
-#?0[>1=]?1[>0=]0=
+#?0x0[>$0x1$=]?0x1[>$0x0$=]$0x0$=
 if # gets value 1, will print 10 else if # gets value 0, will print 01
 else prints 0
 
 <br>
-example 2
+example 2 - value assignment
 <br>
-f?0[>1=]?1[>0=]!f[1>1>1=]>0>0*= 
-should print 00f
+$0xabc$ or $abc$ will assign 0xabc to current cell
+$0xf0$>$0x0$ will assign 0xf0 to current cell, move ahead one cell and assign 0x0 to that cell
+$a||0xc||0xff$ does the same thing as $0xa$>$0xc$>$0xff$
 
-while
-<br>
-0>0>f=
-should also print 00f
+note that to actually view the assigned changes, an '=' is required. in case you forgot to put it, and pressed enter, no worries. the bits are retained forever unless reset by ';'
 
-<br>
-example 3
-6>8>6>5>6>c>6>c>6>f>2>0>7>7>6>f>7>2>6>c>6>4>2>1@
+example 3 - strings
+$68||65||6c||6c||6f||20||77||6f||72||6c||64||21$@
 prints hello world!
-<br>
+
 while
-<br>
-6>8>6>5>6>c>6>c>6>f>2>0>7>7>6>f>7>2>6>c>6>4>2>1i
+
+$68||65||6c||6c||6f||20||77||6f||72||6c||64||21$i
 prints 32309054545037006034346730529
-<br>
-example 4: looping
-<br>
-!f[+^(.)]
+
+example 4 - looping
+!0xf[+r{.}]
 will print digits 1-f sequentially
-<br>
-___________________________<br><br>
+while 
+
+!0x5[+>-<={.}]
+will have a much more *exotic* output
 
 <h2>limitations</h2>
-- as of now nesting of constructs is buggy<br>
-v0.1
+    - dont count them there are lots
+v0.2
