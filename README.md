@@ -7,14 +7,14 @@ run this program directly in cmd.
 > move pointer right
 < move pointer left
 $0xn$ or $n$ sets current cell to '0xn' where n is a hex number of *any length*<br>
+$(0)$ copy the value of cell at position 0 and assign it to current cell.
 + adds 1 to currrent cell (if current cell is f, + makes current cell 0)<br>
 - subtracts 1 from current cell (if current cell is 0, + makes current cell f)<br>
 r print raw bits<br>
 !_[_]_ if not condition (!0x0[>$0x0$=]>0x$1$= is equivalent to 'if current cell is not 0x0 then >$0x0$= else >$0x1$=)<br>
 ?_[_]_ if condition (?0x0[>$0x0$=]>$0x1$= is equivalent to 'if current cell is 0x0 then >$0x0$= else >$0x1$=)<br>
 # randomly assign a value to this cell<br>
-(x) goto cell at location x (starts from 0, in hex. if '-' in front of x, then go back x positions. <br>
-if '+' in front of x, go forward x positions. wraps around if reaches end or start.)<br>
+(x) goto cell at location x (starts from 0, in hex. if '-' in front of x, then go back x positions. if '+' in front of x, go forward x positions. wraps around if reaches end or start.)<br>
 (~) goto last cell<br>
 {.} goto beginning *of code*<br>
 {~} goto end of code (basically break)<br>
