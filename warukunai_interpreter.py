@@ -99,6 +99,7 @@ while True:
                 for i in range(0,cur_pos):
                     tlen+= len(bits[i])+4
                 print(tlen * " " ,len(bits[cur_pos])*"˭",sep="")
+                i+=1
             elif prog_tape[i] == "+":
                 bits[cur_pos] = str(hex(int(bits[cur_pos],0)+1))
             elif prog_tape[i] == "-":
@@ -186,6 +187,7 @@ while True:
                 if prog_tape == ";":
                     print("reset all")
                 prog_tape=""
+            i+=1
     else:
          if prog_tape.split(" ")[0] == shcoms[1]:
           cout=[]
@@ -197,5 +199,3 @@ while True:
                 print("found given value at location(s) ",cout)
              else:
                 print("not found")
-            
-         i+=1
