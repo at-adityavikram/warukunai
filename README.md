@@ -64,6 +64,7 @@ will have a much more *exotic* output
 <h2>limitations</h2>
     - dont count them there are lots<br>
     - 'where' *might* not work due to a recent code port
+    - since recently looping is not working properly
 <h2>fixes</h2>
     - fixed the buggy tag nesting. now ? and ! constructs should nest just fine.<br>
     - fixed bug in variable assignment where multi digit hex were not assigned at all.<br>
