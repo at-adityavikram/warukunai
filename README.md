@@ -4,7 +4,7 @@
 <p align ="center"><img src="intro.png"></p>
 <br><br>
 a virtual-tape based esoteric 'programming language', in hex base.<br>
-run this interpreter directly in cmd.
+for best experience, run this interpreter directly in cmd, with a monospace font as default.
 
 ## main commands
 <p>
