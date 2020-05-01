@@ -1,4 +1,4 @@
-# warukunai
+# Warukunai                                                                        
 [![Open Issues](https://img.shields.io/github/issues-raw/at-adityavikram/warukunai?style=for-the-badge)](https://www.github.com/at-adityavikram/warukunai/issues)
 [![Closed Issues](https://img.shields.io/github/issues-closed-raw/at-adityavikram/warukunai?color=green&style=for-the-badge)](https://www.github.com/at-adityavikram/warukunai/issues)<br><br>
 a virtual-tape based esoteric 'programming language', in hex base.<br>
