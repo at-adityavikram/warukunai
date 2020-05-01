@@ -1,5 +1,17 @@
 import random
 legalchars="1234567890abcdefx"
+logo='''
+                                         888                                 d8b 
+                                         888                                 Y8P 
+                                         888                                     
+ 888  888  888  8888b.  888d888 888  888 888  888 888  888 88888b.   8888b.  888 
+ 888  888  888     "88b 888P"   888  888 888 .88P 888  888 888 "88b     "88b 888 
+ 888  888  888 .d888888 888     888  888 888888K  888  888 888  888 .d888888 888 
+ Y88b 888 d88P 888  888 888     Y88b 888 888 "88b Y88b 888 888  888 888  888 888 
+  "Y8888888P"  "Y888888 888      "Y88888 888  888  "Y88888 888  888 "Y888888 888 
+
+ 2020 at-adityavikram | warukunai esolang interpreter made in (python) heaven ™ 
+'''
 shcoms=["help","where","info","examples"]#everything other than 'where' is not yet implemented...
 bits=["0x0"]
 #hex(int(bits[0],0)+value)
@@ -18,13 +30,14 @@ def pntRaw(prstr):
     for i in range(0,len(prstr)):
         hst+= prstr[i].replace("0x","")
     return hst
+print(logo)
 while True:
     num_br=0
     oprog=""
     prog_tape=""
     #prog_tape = str(__import__('sys').argv[1]).strip()
     if prog_tape == "":
-        prog_tape = input("$ ")
+        prog_tape = input(" ¶ ")
         if "||" in prog_tape:
             num_br=prog_tape.count("||")
             prog_tape = prog_tape.replace("||","$>$")            
@@ -164,14 +177,7 @@ while True:
                 crbts = bits[0:cur_pos+1]
                 bits = crbts[::-1] + bits[cur_pos+1:]
                 cur_pos=0
-            elif prog_tape[i] == ".":
-                if cur_pos < len(bits) - 1:
-                    bits[cur_pos],bits[cur_pos+1] = bits[cur_pos+1],bits[cur_pos]
-                    cur_pos+=1
-                else:
-                    bits.append("0x0")
-                    bits[cur_pos],bits[cur_pos+1] = bits[cur_pos+1],bits[cur_pos]
-                    cur_pos+=1
+            
             elif prog_tape[i] == "@":
                try:
                    print(bytes.fromhex(pntRaw(bits)).decode('utf-8'))
@@ -182,7 +188,7 @@ while True:
                    print(pntRaw(bits))
             elif prog_tape[i] == ";":
                 bits=["0x0"]
-                cur_pos=0
+                cur_pos=-1
                 lstlen=[3]
                 if prog_tape == ";":
                     print("reset all")
