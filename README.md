@@ -6,6 +6,9 @@
 a virtual-tape based esoteric 'programming language', in hex base.<br>
 for best experience, run this interpreter directly in cmd, with a monospace font as default.
 
+## Important Notice
+I am depracating this project temporarily in order to port it to another language, and build a better interpreter.
+
 ## main commands
 <p>
 > move pointer right. will add a cell with value '0x0' if at end.<br>
