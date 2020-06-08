@@ -6,8 +6,15 @@
 a virtual-tape based esoteric 'programming language', in hex base.<br>
 for best experience, run this interpreter directly in cmd, with a monospace font as default.
 
-## Important Notice
-I am depracating this project temporarily in order to port it to another language, and build a better interpreter.
+### Important Notice
+I am depracating this project temporarily in order to port it to another language, and build a better interpreter. Don't worry, the base interpreter will still be python, it just will have a GUI wrapper, which will probably be written in VB.
+
+### TODO
+ - fix the nesting bug
+ - multiline support
+ - better commands, possibly word-commands'
+ - live tape view + output view
+ - GUI IDE
 
 ## main commands
 <p>
